@@ -1,0 +1,16 @@
+package org.vet.management.applicataion.port.in.Breed;
+
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import org.vet.management.domain.model.Breed.Breed;
+import org.vet.management.domain.model.Pet.Pet;
+
+@Path("/breed")
+public interface IUpdateBreed {
+  @PUT
+  @Path("/{idBreed}")
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  Response putBreed(@PathParam("idBreed") String idBreed, Breed breed);
+}
